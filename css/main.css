@@ -209,6 +209,20 @@ video {
     background-color: #333;
 }
 
+.hire-button-about {
+    background-color: white;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.hire-button-about:hover {
+    background-color: #333;
+}
+
 
 /* ===== PORTFOLIO ===== */
 .col-12 {
@@ -227,7 +241,44 @@ video {
 /* ===== CONTACT ===== */
 .contact-section {
     text-align: center;
+    margin-top: 50px;
     padding: 50px 0;
+}
+
+.contact-section{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contact-info a {
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.social-links a {
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
 .section-title {
