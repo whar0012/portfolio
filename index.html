@@ -23,7 +23,7 @@
                 <li><a href="https://drive.google.com/file/d/1GMKzbXATH8-6mQB9liLofIXGYjtYXgCq/view?usp=sharing" target="_blank" rel="noopener noreferrer">RESUME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="contact.html"><button class="hire-button">HIRE ME</button></a></li>
+                <li><a href="hireme.html"><button class="hire-button">HIRE ME</button></a></li>
             </ul>
         </nav>
         <div class="title-section">
@@ -49,7 +49,8 @@
                         - Business Cards <br>
                         - Posters & Flyers <br>
                         - Social Media Ads</p><br>
-                    <a href="contact.html" class="cta-button">HIRE ME</a>
+                    <a href="hireme.html"><button class="hire-button">HIRE ME</button></a>
+
                 </div>
                 <div class="service-item">
                     <img src="images/interface.svg" alt="Interface Icon">
@@ -58,7 +59,7 @@
                         - Web Designs <br>
                         - Blogs & CMS <br>
                         - Responsive Web Designs</p><br>
-                    <a href="contact.html" class="cta-button">HIRE ME</a>
+                    <a href="hireme.html"><button class="hire-button">HIRE ME</button></a>
                 </div>
                 <div class="service-item">
                     <img src="images/corporate.svg" alt="Corporate Icon">
@@ -67,7 +68,7 @@
                         - Color Schemes <br>
                         - Online Banners <br>
                         - Brand Appearances</p><br>
-                    <a href="contact.html" class="cta-button">HIRE ME</a>
+                    <a href="hireme.html"><button class="hire-button">HIRE ME</button></a>
                 </div>
                 <div class="service-item">
                     <img src="images/photography.svg" alt="Photography Icon">
@@ -76,43 +77,49 @@
                         - Macro <br>
                         - Nature <br>
                         - Portraits</p><br>
-                    <a href="contact.html" class="cta-button">HIRE ME</a><br><br><br><br>
+                    <a href="hireme.html"><button class="hire-button">HIRE ME</button></a>
                 </div>
             </div>
         </section>
 
         <!-- =========== PORTFOLIO SECTION =========== -->
         <section id="services" class="container-lg"> <!-- opens services -->
-            <div class="row gy-2 g-md-2"> <!-- opens row -->
-                <div class="section-title">
+            <div class="row gy-4 justify-content-center"> <!-- vertical gap and center -->
+                <div class="section-title text-center w-100 mb-4">
                     <h2>Portfolio</h2>
                     <img src="images/portfolio.svg" alt="Portfolio Icon">
                     <br><br>
                 </div>
-
-                <div class="col-md-6"> <!-- opens website section -->
-                    <div class="card border-0 rounded-0"> <!-- opens card -->
-                        <a href="graphics.html"></a>
-                        <img src="images/DigitalGraphics/DigitalGraphics.jpg" class="card-img-top rounded-0" alt="placeholder">
-                        <div class="card-body bg-secondary"> <!-- opens card body -->
+                <div class="col-12 col-md-4 d-flex align-items-stretch"> <!-- Digital Graphics -->
+                    <div class="card border-0 rounded-3 shadow-sm w-100 h-100 d-flex flex-column">
+                        <img src="images/DigitalGraphics/DigitalGraphics.jpg" class="card-img-top rounded-top" alt="Digital Graphics">
+                        <div class="card-body bg-secondary d-flex flex-column flex-grow-1 justify-content-between">
                             <h5 class="card-title">Digital Graphics</h5>
                             <p class="card-text">Check Out Some Digital Graphics by WharmbyCreatives!</p>
-                            <a href="graphics.html" class="btn btn-dark rounded-0 d-block p-3">See More <i class="bi bi-play-fill"></i></a>
-                        </div> <!-- closes card body -->
-                    </div> <!-- closes card -->
-                </div> <!-- closes website section -->
-
-                <div class="col-md-6"> <!-- opens photography section -->
-                    <div class="card border-0 rounded-0">
-                        <img src="images/PhotoCollage2.jpg" class="card-img-top rounded-0" alt="placeholder">
-                        <div class="card-body bg-secondary">
+                            <a href="graphics.html" class="btn btn-dark rounded-3 mt-auto">See More <i class="bi bi-play-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-stretch"> <!-- Photography -->
+                    <div class="card border-0 rounded-3 shadow-sm w-100 h-100 d-flex flex-column">
+                        <img src="images/PhotoCollage2.jpg" class="card-img-top rounded-top" alt="Photography">
+                        <div class="card-body bg-secondary d-flex flex-column flex-grow-1 justify-content-between">
                             <h5 class="card-title">Photography</h5>
                             <p class="card-text">Check Out Some Photography by WharmbyCreatives!</p>
-                            <a href="photography.html" class="btn btn-dark rounded-0 d-block p-3">See More <i class="bi bi-play-fill"></i></a>
-                        </div><!-- closes .card-body -->
-                    </div><!-- closes .card -->
-                </div><!-- closes photography section -->
-
+                            <a href="photography.html" class="btn btn-dark rounded-3 mt-auto">See More <i class="bi bi-play-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-stretch"> <!-- Other Projects -->
+                    <div class="card border-0 rounded-3 shadow-sm w-100 h-100 d-flex flex-column">
+                        <img src="images/OtherBackground.jpg" class="card-img-top rounded-top" alt="Other Projects">
+                        <div class="card-body bg-secondary d-flex flex-column flex-grow-1 justify-content-between">
+                            <h5 class="card-title">Websites</h5>
+                            <p class="card-text">Check Out Some Websites</p>
+                            <a href="other.html" class="btn btn-dark rounded-3 mt-auto">See More <i class="bi bi-play-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div> <!-- closes row -->
         </section> <!-- closes services -->
 

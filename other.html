@@ -24,7 +24,7 @@
                 <li><a href="https://drive.google.com/file/d/1GMKzbXATH8-6mQB9liLofIXGYjtYXgCq/view?usp=sharing" target="_blank" rel="noopener noreferrer">RESUME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><button class="hire-button-about">HIRE ME</button></li>
+                <li><a href="hireme.html"><button class="hire-button">HIRE ME</button></a></li>
             </ul>
         </nav>
     </header>
@@ -37,26 +37,77 @@
 
     <section class="portfolio">
         <div class="portfolio-item">
-            <img src="images/Other/Other1.jpg" alt="Portfolio Item 1">
+            <img class="gallery-img" src="images/Portfolio-images/Blog.png" alt="Portfolio Item 1">
         </div>
         <div class="portfolio-item">
-            <img src="images/Other/Other2.jpg" alt="Portfolio Item 2">
+            <img class="gallery-img" src="images/Portfolio-images/FUTRE(FFC).png" alt="Portfolio Item 2">
         </div>
         <div class="portfolio-item">
-            <img src="images/Other/Other3.jpg" alt="Portfolio Item 3">
+            <img class="gallery-img" src="images/Portfolio-images/Homepage 1.png" alt="Portfolio Item 3">
         </div>
         <div class="portfolio-item">
-            <img src="images/Other/Other4.jpg" alt="Portfolio Item 4">
+            <img class="gallery-img" src="images/Portfolio-images/portfolio-image2.jpeg" alt="Portfolio Item 4">
+        </div>
+        <div class="portfolio-item">
+            <img class="gallery-img" src="images/Portfolio-images/portfolio-image1.jpeg" alt="Portfolio Item 5">
+        </div>
+        <div class="portfolio-item">
+            <img class="gallery-img" src="images/Portfolio-images/ThreeStarMedia.png" alt="Portfolio Item 6">
+        </div>
+        <div class="portfolio-item">
+            <img class="gallery-img" src="images/Portfolio-images/WharmbyCreatives (second idea SC).png" alt="Portfolio Item 7">
+        </div>
+        <div class="portfolio-item">
+            <img class="gallery-img" src="images/Portfolio-images/WharmbyCreatives Portfolio Site (sc).png" alt="Portfolio Item 8">
         </div>
     </section>
-    <section class="portfolio">
-        <div class="portfolio-item">
-            <img src="images/Other/Other5.jpg" alt="Portfolio Item 5">
-        </div>
-        <div class="portfolio-item">
-            <img src="images/Other/Other6.jpg" alt="Portfolio Item 6">
-        </div>
-    </section>
+    <!-- Fullscreen Image Viewer -->
+    <div id="fullscreen-viewer">
+        <button id="prev-btn">&#8592;</button>
+        <img id="fullscreen-img" src="" alt="Full Image">
+        <button id="next-btn">&#8594;</button>
+        <button id="close-btn">&times;</button>
+    </div>
+
+    <script>
+    const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+    const viewer = document.getElementById('fullscreen-viewer');
+    const fullscreenImg = document.getElementById('fullscreen-img');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const closeBtn = document.getElementById('close-btn');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        if (index < 0 || index >= galleryImages.length) return;
+        currentIndex = index;
+        fullscreenImg.src = galleryImages[index].src;
+        viewer.classList.add('show');
+    }
+
+    galleryImages.forEach((img, idx) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => showImage(idx));
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) showImage(currentIndex - 1);
+    });
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < galleryImages.length - 1) showImage(currentIndex + 1);
+    });
+    closeBtn.addEventListener('click', () => {
+        viewer.classList.remove('show');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (viewer.classList.contains('show')) {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+            if (e.key === 'Escape') closeBtn.click();
+        }
+    });
+    </script>
 
     <section>
         <div class="social-links">

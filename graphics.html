@@ -24,7 +24,7 @@
                 <li><a href="https://drive.google.com/file/d/1GMKzbXATH8-6mQB9liLofIXGYjtYXgCq/view?usp=sharing" target="_blank" rel="noopener noreferrer">RESUME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><button class="hire-button-about">HIRE ME</button></li>
+                <li><a href="hireme.html"><button class="hire-button">HIRE ME</button></a></li>
             </ul>
         </nav>
     </header>
@@ -37,24 +37,24 @@
 
     <section class="portfolio">
         <div class="portfolio-item">
-            <img src="images/DigitalGraphics/Algos.jpg" alt="Algos">
+            <img src="images/DigitalGraphics/Algos.jpg" alt="Algos" class="gallery-img">
         </div>
         <div class="portfolio-item">
-            <img src="images/DigitalGraphics/Dream.jpg" alt="Dream">
+            <img src="images/DigitalGraphics/Dream.jpg" alt="Dream" class="gallery-img">
         </div>
         <div class="portfolio-item">
-            <img src="images/DigitalGraphics/Peace at Last.jpg" alt="Peace at last">
+            <img src="images/DigitalGraphics/Peace at Last.jpg" alt="Peace at last" class="gallery-img">
         </div>
         <div class="portfolio-item">
-            <img src="images/DigitalGraphics/Space and Time.jpg" alt="Space and Time">
+            <img src="images/DigitalGraphics/Space and Time.jpg" alt="Space and Time" class="gallery-img">
         </div>
     </section>
     <section class="portfolio">
         <div class="portfolio-item">
-            <img src="images/DigitalGraphics/Subconscious Pain.jpg" alt="Subconscious Pain">
+            <img src="images/DigitalGraphics/Subconscious Pain.jpg" alt="Subconscious Pain" class="gallery-img">
         </div>
         <div class="portfolio-item">
-            <img src="images/DigitalGraphics/The Son.jpg" alt="The Son">
+            <img src="images/DigitalGraphics/The Son.jpg" alt="The Son" class="gallery-img">
         </div>
     </section>
 
@@ -85,6 +85,55 @@
             </div>
         </div>
     </footer>
+
+    <!-- Fullscreen Image Viewer -->
+<div id="fullscreen-viewer" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.95); z-index:9999; justify-content:center; align-items:center;">
+    <button id="prev-btn" style="position:absolute; left:32px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:#fff; border:none; font-size:2rem; border-radius:50%; width:48px; height:48px; cursor:pointer;">&#8592;</button>
+    <img id="fullscreen-img" src="" alt="Full Image" style="max-width:90vw; max-height:90vh; border-radius:16px; box-shadow:0 4px 32px rgba(0,0,0,0.3);">
+    <button id="next-btn" style="position:absolute; right:32px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:#fff; border:none; font-size:2rem; border-radius:50%; width:48px; height:48px; cursor:pointer;">&#8594;</button>
+    <button id="close-btn" style="position:absolute; top:32px; right:32px; background:rgba(0,0,0,0.5); color:#fff; border:none; font-size:2rem; border-radius:50%; width:48px; height:48px; cursor:pointer;">&times;</button>
+</div>
+
+<script>
+// Collect all gallery images
+const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+const viewer = document.getElementById('fullscreen-viewer');
+const fullscreenImg = document.getElementById('fullscreen-img');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const closeBtn = document.getElementById('close-btn');
+let currentIndex = 0;
+
+function showImage(index) {
+    if (index < 0 || index >= galleryImages.length) return;
+    currentIndex = index;
+    fullscreenImg.src = galleryImages[index].src;
+    viewer.style.display = 'flex';
+}
+
+galleryImages.forEach((img, idx) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => showImage(idx));
+});
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) showImage(currentIndex - 1);
+});
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < galleryImages.length - 1) showImage(currentIndex + 1);
+});
+closeBtn.addEventListener('click', () => {
+    viewer.style.display = 'none';
+});
+
+document.addEventListener('keydown', (e) => {
+    if (viewer.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
+    }
+});
+</script>
 
 </body>
 </html>
